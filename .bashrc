@@ -1,4 +1,5 @@
 alias ll='ls -laGh'
+alias vim='nvim'
 source ~/git-prompt.sh
 source ~/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
