@@ -1,0 +1,14 @@
+*~
+.DS_Store
+nbproject/
+nbactions.xml
+nb-configuration.xml
+nbactions-development.xml
+nb-configuration
+target/
+out/
+.idea/
+*.iml
+*.iws
+*.ipr
+/.idea/
