@@ -14,3 +14,9 @@ BUG_REPORT_URL="https://bugs.manjaro.org/"
 LOGO=manjarolinux
 ```
 and cinnamon decktop
+
+
+## linux desktop setup
+```
+gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
+```
