@@ -36,6 +36,7 @@ https://github.com/cdown/clipnotify (self build)
 xsel
 jdk11-openjdk (depend version Idea)
 dnsutils (dig)
+Krita (image edit)
 ```
 
 
