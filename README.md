@@ -20,3 +20,12 @@ and cinnamon decktop
 ```
 gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
 ```
+
+
+## usb boot raspberry pi only 
+
+```
+# /etc/modprobe.d/blacklist-sdhci.conf
+# ignore sd cord unload error
+blacklist sdhci 
+```
