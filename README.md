@@ -37,6 +37,8 @@ xsel
 jdk11-openjdk (depend version Idea)
 dnsutils (dig)
 Krita (image edit)
+HackGen
+Noto Sans
 ```
 
 
