@@ -21,6 +21,23 @@ and cinnamon decktop
 gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
 ```
 
+### installs
+
+```
+cinnamon-desktop
+github.com/bootjp/linux-screen-reader
+fcitx-mozc-ut-unified
+Google Chrome
+Discord
+Idea*
+neovim
+docker-ce
+https://github.com/cdown/clipnotify (self build)
+xsel
+jdk11-openjdk (depend version Idea)
+dnsutils (dig)
+```
+
 
 ## usb boot raspberry pi only 
 
