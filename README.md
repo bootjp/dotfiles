@@ -48,4 +48,9 @@ Noto Sans
 # /etc/modprobe.d/blacklist-sdhci.conf
 # ignore sd cord unload error
 blacklist sdhci 
+
+
+```
+```
+pacman-key --populate archlinuxarm
 ```
