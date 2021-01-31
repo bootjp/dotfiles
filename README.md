@@ -41,6 +41,13 @@ HackGen
 Noto Sans
 ```
 
+## IME辞書
+* dic-nico-intersection-pixiv
+  - https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
+* google-ime-user-dictionary-ja-en
+  - https://code.google.com/archive/p/google-ime-user-dictionary-ja-en/
+* 人名
+  - https://www.vector.co.jp/soft/data/writing/se008149.html
 
 ## usb boot raspberry pi only 
 
