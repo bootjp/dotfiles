@@ -39,6 +39,7 @@ dnsutils (dig)
 Krita (image edit)
 HackGen
 Noto Sans
+bash_completion
 ```
 
 ### setting
