@@ -41,6 +41,12 @@ HackGen
 Noto Sans
 ```
 
+### setting
+```
+KeyBordLayout
+- Ctrl is mapped to Win and the usual Ctrl
+- X server shutdown key sequence
+```
 ## IME辞書
 * dic-nico-intersection-pixiv
   - https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
