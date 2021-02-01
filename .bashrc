@@ -1,7 +1,7 @@
-#
+# /usr/share/bash-completion/bash_completion
 # ~/.bashrc
 #
-
+source $HOME/.cargo/env
 alias ll='ls -laGh'
 alias vim='nvim'
 
@@ -162,3 +162,6 @@ function __show_exit_code() {
   done
 }
 PROMPT_COMMAND='__show_exit_code;'${PROMPT_COMMAND//__show_exit_code;/}
+source "$HOME/.cargo/env"
+
+
