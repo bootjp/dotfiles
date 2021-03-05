@@ -40,6 +40,9 @@ Krita (image edit)
 HackGen
 Noto Sans
 bash_completion
+git-completion.bash
+git-prompt.sh
+~
 ```
 
 ### setting
