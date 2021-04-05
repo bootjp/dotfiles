@@ -1,0 +1,20 @@
+{
+  "suggest.noselect": false,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "ﯦ",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "json",
+    "yaml",
+    "toml",
+    "rust",
+    "go",
+    "javascript",
+    "typescript",
+    "vue",
+    "ruby"
+  ]
+}
