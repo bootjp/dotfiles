@@ -48,3 +48,9 @@ colorscheme tokyonight
 
 "colorscheme jellybeans
 "colorscheme desert
+
+"前回のカーソル位置を復元
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
