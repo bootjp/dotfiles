@@ -162,7 +162,6 @@ function __show_exit_code() {
     fi
   done
 }
-PROMPT_COMMAND='__show_exit_code;'${PROMPT_COMMAND//__show_exit_code;/}
 
 if test -f "$HOME/.cargo/env"; then
   echo "load cargo env"
