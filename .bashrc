@@ -1,12 +1,22 @@
 # /usr/share/bash-completion/bash_completion
 # ~/.bashrc
 #
-source $HOME/.cargo/env
+
 alias ll='ls -laGh'
 alias vim='nvim'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
 
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+if test -f "/etc/os-release"; then
+  # this is running on linux
+  # mac os compatible command alias.
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
+
 
 [[ $- != *i* ]] && return
 export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
@@ -14,7 +24,6 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
 
 colors() {
 	local fgc bgc vals seq0
@@ -102,12 +111,6 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias more=less
-
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
@@ -117,15 +120,10 @@ complete -cf sudo
 # it regains control.  #65623
 # http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
 shopt -s checkwinsize
-
 shopt -s expand_aliases
-
-# export QT_SELECT=4
-
-# Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
-#
+
 # # ex - archive extractor
 # # usage: ex <file>
 ex ()
@@ -165,6 +163,10 @@ function __show_exit_code() {
   done
 }
 PROMPT_COMMAND='__show_exit_code;'${PROMPT_COMMAND//__show_exit_code;/}
-source "$HOME/.cargo/env"
+
+if test -f "$HOME/.cargo/env"; then
+  echo "load cargo env"
+  source "$HOME/.cargo/env"
+fi
 
 

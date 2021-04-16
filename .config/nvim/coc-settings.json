@@ -1,7 +1,7 @@
 {
   "suggest.noselect": false,
   "suggest.preferCompleteThanJumpPlaceholder": true,
-  "diagnostic.errorSign": "",
+  "diagnostic.errorSign": "✗",
   "diagnostic.warningSign": "⚠",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "ﯦ",
@@ -14,7 +14,6 @@
     "go",
     "javascript",
     "typescript",
-    "vue",
     "ruby"
   ]
 }
