@@ -1,6 +1,6 @@
 [user]
-	name = ぶーと / Yoshiaki Ueda 
-	email = oh@bootjp.me
+	name = bootjp / Yoshiaki Ueda
+	email = contact@bootjp.me
 	signingkey = 06B2D86A
 [core]
 	excludesfile = /home/bootjp/.gitignore_global
