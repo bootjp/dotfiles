@@ -15,6 +15,11 @@ let g:goimports = 1
 
 let mapleader = "\<Space>"
 
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
 if &compatible
   set nocompatible
 endif
