@@ -82,5 +82,6 @@ ln -s ~/src/dotfiles/.config/nvim ~/.git
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/src/dotfiles/.bashrc ~/.bashrc
-
+ln -s ~/src/dotfiles/.xprofile ~/.xprofile
+ln -s ~/src/dotfiles/.xinitrc ~/.xinitrc
 ```
