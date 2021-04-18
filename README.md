@@ -13,10 +13,11 @@ SUPPORT_URL="https://manjaro.org/"
 BUG_REPORT_URL="https://bugs.manjaro.org/"
 LOGO=manjarolinux
 ```
+
 and cinnamon decktop
 
-
 ## linux desktop setup
+
 ```
 gsettings set org.cinnamon.desktop.interface gtk-key-theme Emacs
 ```
@@ -46,28 +47,40 @@ git-prompt.sh
 ```
 
 ### setting
+
 ```
 KeyBordLayout
 - Ctrl is mapped to Win and the usual Ctrl
 - X server shutdown key sequence
 ```
-## IME辞書
-* dic-nico-intersection-pixiv
+
+## IME 辞書
+
+- dic-nico-intersection-pixiv
   - https://cdn.ncaq.net/dic-nico-intersection-pixiv.txt
-* google-ime-user-dictionary-ja-en
+- google-ime-user-dictionary-ja-en
   - https://code.google.com/archive/p/google-ime-user-dictionary-ja-en/
-* 人名
+- 人名
   - https://www.vector.co.jp/soft/data/writing/se008149.html
 
-## usb boot raspberry pi only 
+## usb boot raspberry pi only
 
 ```
 # /etc/modprobe.d/blacklist-sdhci.conf
 # ignore sd cord unload error
-blacklist sdhci 
+blacklist sdhci
 
 
 ```
+
 ```
 pacman-key --populate archlinuxarm
+```
+
+```
+ln -s ~/src/dotfiles/.config/nvim ~/.git
+ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/src/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/src/dotfiles/.bashrc ~/.bashrc
+
 ```
