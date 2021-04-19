@@ -12,7 +12,6 @@ set incsearch " インクリメンタルサーチ. １文字入力毎に検索�
 set ignorecase " 検索パターンに大文字小文字を区別しない
 
 let g:goimports = 1
-
 let mapleader = "\<Space>"
 
 augroup vimrcEx
@@ -44,7 +43,6 @@ set showtabline=2
 set termguicolors
 set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
-"let g:tokyonight_enable_italic = 1
 
 colorscheme tokyonight
 
@@ -56,3 +54,13 @@ augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
+
+function SetIME(mode)
+  if has("unix") && a:mode=='off'
+    call system('fcitx-remote -c')
+  else
+    call system('fcitx-remote -o')
+  endif
+endfunction
+
+autocmd InsertLeave * :call SetIME('off')
