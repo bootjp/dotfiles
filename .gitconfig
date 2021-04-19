@@ -4,7 +4,7 @@
 	signingkey = 06B2D86A
 [core]
 	excludesfile = /home/bootjp/.gitignore_global
-	editor = vim
+	editor = nvim
 [color "diff"]
   meta = 242 238
   frag = 239 236
