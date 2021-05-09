@@ -65,6 +65,7 @@ hook_add = '''
     \ 'coc-solargraph',
     \ 'coc-markdownlint',
     \ 'coc-snippets',
+    \ 'coc-lua',
     \ ]
 '''
 

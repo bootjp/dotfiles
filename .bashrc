@@ -166,4 +166,9 @@ if test -f "$HOME/.cargo/env"; then
   source "$HOME/.cargo/env"
 fi
 
+## tilix 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
+
 

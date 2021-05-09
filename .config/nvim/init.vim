@@ -42,6 +42,7 @@ syntax enable
 set showtabline=2
 set termguicolors
 set termguicolors
+set clipboard+=unnamedplus
 let g:tokyonight_style = 'night' " available: night, storm
 
 colorscheme tokyonight
@@ -63,4 +64,6 @@ function SetIME(mode)
   endif
 endfunction
 
+" 末尾スペースの自動削除
+autocmd BufWritePre * :%s/\s\+$//ge
 autocmd InsertLeave * :call SetIME('off')
