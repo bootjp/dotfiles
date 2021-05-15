@@ -29,6 +29,22 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
+
+# disable git add .
+# ref: https://stackoverflow.com/questions/25884007/disable-git-add-command
+git() {
+    if [ "$1" = "add" -o "$1" = "stage" ]; then
+        if [ "$2" = "." ]; then
+            printf "'git %s .' is currently disabled by your Git wrapper.\n" "$1";
+        else
+            command git "$@";
+        fi
+    else
+        command git "$@";
+    fi;
+}
+
+
 colors() {
   local fgc bgc vals seq0
 
@@ -166,7 +182,7 @@ if test -f "$HOME/.cargo/env"; then
   source "$HOME/.cargo/env"
 fi
 
-## tilix 
+## tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
