@@ -39,6 +39,11 @@ syntax enable
 
 "set guifont=Ricty:h14
 
+
+" no permission file force write
+cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
+
+
 set showtabline=2
 set termguicolors
 set termguicolors
