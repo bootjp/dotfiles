@@ -15,3 +15,5 @@
 
 [diff]
   compactionHeuristic = true
+[push]
+	default = current

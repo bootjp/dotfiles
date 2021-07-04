@@ -43,7 +43,8 @@ Noto Sans
 bash_completion
 git-completion.bash
 git-prompt.sh
-~
+poppler-data
+goldendict
 ```
 
 ### setting
