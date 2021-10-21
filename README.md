@@ -79,7 +79,8 @@ pacman-key --populate archlinuxarm
 ```
 
 ```
-ln -s ~/src/dotfiles/.config/nvim ~/.git
+ln -s ~/src/dotfiles/.git ~/.git
+ln -s ~/src/dotfiles/.config/nvim ~/.config/nvim
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/src/dotfiles/.bashrc ~/.bashrc
