@@ -6,3 +6,5 @@
 
 # using x only
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+export PATH=/home/bootjp/.tiup/bin:$PATH

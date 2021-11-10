@@ -47,9 +47,8 @@ cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
 set showtabline=2
 set termguicolors
 set termguicolors
-set clipboard+=unnamedplus
 let g:tokyonight_style = 'night' " available: night, storm
-
+set clipboard+=unnamedplus
 colorscheme tokyonight
 
 "colorscheme jellybeans
@@ -72,3 +71,4 @@ endfunction
 " 末尾スペースの自動削除
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd InsertLeave * :call SetIME('off')
+
