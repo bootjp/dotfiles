@@ -22,6 +22,7 @@ if test -f "/etc/os-release"; then
 fi
 
 
+export DOCKER_BUILDKIT=1
 [[ $- != *i* ]] && return
 export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\]\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
 export HISTCONTROL=ignoredups:erasedups
