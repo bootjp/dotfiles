@@ -88,4 +88,5 @@ ln -s ~/src/dotfiles/.xprofile ~/.xprofile
 ln -s ~/src/dotfiles/.xinitrc ~/.xinitrc
 ln -s ~/src/dotfiles/.config/alacritty/ ~/.config/
 ln -s ~/src/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/src/dotfiles/.config/kinto/kinto.python ~/.kinto/
 ```
