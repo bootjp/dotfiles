@@ -20,8 +20,6 @@ font:
     family: "HackGen Console"
     style: Bold
   size: 18
-  italic:
-    family: HackGen Console
   use_thin_strokes: true
 
 schemes:
