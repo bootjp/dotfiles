@@ -1,7 +1,10 @@
 # /usr/share/bash-completion/bash_completion
 # ~/.bashrc
 #
-export DEVELOP_DOCKER_FILE=develop.m1.Dockerfile
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 alias ll='ls -laGh'
 alias vim='nvim'
 alias cp="cp -i"                          # confirm before overwriting something
@@ -12,10 +15,15 @@ alias more=less
 alias hr="history | grep"
 export JAVA_HOME=`/usr/libexec/java_home -v 17`
 export MAKEFLAGS=-j10 $MAKEFLAGS
-
-[[ -f /usr/share/git/completion/git-prompt.sh ]] && source /usr/share/git/completion/git-prompt.sh
-[[ -f /usr/share/git/completion/git-completion.bash  ]] && source /usr/share/git/completion/git-completion.bash
 export NVM_DIR="$HOME/.nvm"
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+ __GIT_PROMPT_DIR="$(brew --prefix)/opt/bash-git-prompt/share"
+ source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+
 if test -f "/etc/os-release"; then
   # this is running on linux
   # mac os compatible command alias.
@@ -188,8 +196,6 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
-
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
