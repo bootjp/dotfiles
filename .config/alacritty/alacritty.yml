@@ -14,14 +14,12 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: HackGen Console
+    family: "HackGen Console"
     style: Regular
   bold:
-    family: HackGen Console
+    family: "HackGen Console"
     style: Bold
-  italic:
-    family: HackGen Console
-  size: 14
+  size: 18
   use_thin_strokes: true
 
 schemes:

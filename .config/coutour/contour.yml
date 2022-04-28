@@ -222,7 +222,7 @@ profiles:
       size: 14
 
       # DPI scaling factor applied on top of the system configured on (default: 1.0).
-      dpi_scale: 1.0
+      dpi_scale: 2.0
 
       # Font Locator API
       # Selects an engine to use for locating font files on the system.
@@ -231,7 +231,7 @@ profiles:
       # - fontconfig      : uses fontconfig to select fonts
       # - CoreText        : uses OS/X CoreText to select fonts (currently not implemented).
       # - DirectWrite     : selects DirectWrite engine (Windows only)
-      locator: fontconfig
+      locator: CoreText
 
       # Text shaping related settings
       text_shaping:
