@@ -1,7 +1,6 @@
 # /usr/share/bash-completion/bash_completion
 # ~/.bashrc
 #
-export BASH_SILENCE_DEPRECATION_WARNING=1
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -13,33 +12,46 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias hr="history | grep"
-export JAVA_HOME=`/usr/libexec/java_home -v 17`
-export MAKEFLAGS=-j10 $MAKEFLAGS
+
+# Bash won't get SIGWINCH if another process is in the foreground.
+# Enable checkwinsize so that bash will check the terminal size when
+# it regains control.  #65623
+# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
+shopt -s checkwinsize
+shopt -s expand_aliases
+shopt -s histappend
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export DOCKER_BUILDKIT=1
+export MAKEFLAGS="-j10 $MAKEFLAGS"
 export NVM_DIR="$HOME/.nvm"
 
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
  __GIT_PROMPT_DIR="$(brew --prefix)/opt/bash-git-prompt/share"
  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
+[ -r /opt/homebrew/etc/profile.d/bash_completion.sh ] && . /opt/homebrew/etc/profile.d/bash_completion.sh
 
 if test -f "/etc/os-release"; then
   # this is running on linux
   # mac os compatible command alias.
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
+
+  ## tilix
+  if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+  fi
 fi
 
 
-export DOCKER_BUILDKIT=1
-[[ $- != *i* ]] && return
+#[[ $- != *i* ]] && return
 export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\]\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
 
 # disable git add .
 # ref: https://stackoverflow.com/questions/25884007/disable-git-add-command
@@ -83,7 +95,6 @@ colors() {
   done
 }
 
-[ -r /opt/homebrew/etc/profile.d/bash_completion.sh ] && . /opt/homebrew/etc/profile.d/bash_completion.sh
 # Change the window title of X terminals
 case ${TERM} in
   xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
@@ -139,14 +150,6 @@ xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
 
-# Bash won't get SIGWINCH if another process is in the foreground.
-# Enable checkwinsize so that bash will check the terminal size when
-# it regains control.  #65623
-# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
-shopt -s checkwinsize
-shopt -s expand_aliases
-shopt -s histappend
-
 
 # # ex - archive extractor
 # # usage: ex <file>
@@ -192,11 +195,3 @@ if test -f "$HOME/.cargo/env"; then
   source "$HOME/.cargo/env"
 fi
 
-## tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
