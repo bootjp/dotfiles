@@ -28,7 +28,6 @@ export NVM_DIR="$HOME/.nvm"
 
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
  __GIT_PROMPT_DIR="$(brew --prefix)/opt/bash-git-prompt/share"
- source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 [ -r /opt/homebrew/etc/profile.d/bash_completion.sh ] && . /opt/homebrew/etc/profile.d/bash_completion.sh
@@ -46,7 +45,6 @@ if test -f "/etc/os-release"; then
 fi
 
 
-#[[ $- != *i* ]] && return
 export PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\]\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
