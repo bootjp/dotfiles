@@ -3,7 +3,6 @@
 #
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 alias ll='ls -laGh'
 alias vim='nvim'
 alias cp="cp -i"                          # confirm before overwriting something
@@ -12,7 +11,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias hr="history | grep"
-
+alias docker-compose='docker compose'
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
