@@ -22,6 +22,10 @@ font:
   size: 18
   use_thin_strokes: true
 
+key_bindings:
+  - { key: Yen, chars: "\x5C" }
+    #- { key: Yen, mods:Alt, chars: "\xA5" }
+
 schemes:
   # Tokyo Night theme, based on both:
   #   https://github.com/ghifarit53/tokyonight-vim
@@ -81,4 +85,3 @@ schemes:
       white: "0xacb0d0"
 
 colors: *tokyo-night
-

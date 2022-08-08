@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+# disable paste mode off
+printf "\e[?2004l"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 alias ll='ls -laGh'
 alias vim='nvim'
@@ -12,6 +14,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias hr="history | grep"
 alias docker-compose='docker compose'
+
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
@@ -188,7 +191,7 @@ function __show_exit_code() {
 }
 
 if test -f "$HOME/.cargo/env"; then
-  echo "load cargo env"
   source "$HOME/.cargo/env"
+  . "$HOME/.cargo/env"
 fi
 
