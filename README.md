@@ -79,7 +79,6 @@ pacman-key --populate archlinuxarm
 ```
 
 ```
-ln -s ~/src/dotfiles/.git ~/.git
 ln -s ~/src/dotfiles/.config/nvim ~/.config
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.gitignore_global ~/.gitignore_global
