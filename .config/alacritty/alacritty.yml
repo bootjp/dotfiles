@@ -20,7 +20,6 @@ font:
     family: "HackGen Console"
     style: Bold
   size: 18
-  use_thin_strokes: true
 
 key_bindings:
   - { key: Yen, chars: "\x5C" }
