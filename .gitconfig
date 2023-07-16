@@ -2,8 +2,17 @@
 	name = bootjp / Yoshiaki Ueda
 	email = contact@bootjp.me
 	signingkey = 56359833C049586F11E04C2D9D9D3E2DE94F00FE
+
+[gpg]
+  program = /opt/homebrew/bin/gpg
+
+[commit]
+  gpgsign = true
+
+
 [core]
 	editor = nvim
+	pager = less -x1,5,9,13,17
 [color "diff"]
   meta = 242 238
   frag = 239 236
@@ -34,5 +43,5 @@
 
 [pull]
 	rebase = false
-[gpg]
-	program = /opt/homebrew/bin/gpg
+[init]
+	defaultBranch = main
