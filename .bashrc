@@ -14,6 +14,8 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias hr="history | grep"
 alias docker-compose='docker compose'
+alias gc="git commit"
+alias gp="git push"
 
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
