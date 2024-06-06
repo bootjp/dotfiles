@@ -16,7 +16,6 @@ alias hr="history | grep"
 alias docker-compose='docker compose'
 alias gc="git commit"
 alias gp="git push"
-
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
@@ -29,6 +28,11 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export DOCKER_BUILDKIT=1
 export MAKEFLAGS="-j10 $MAKEFLAGS"
 export NVM_DIR="$HOME/.nvm"
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
  __GIT_PROMPT_DIR="$(brew --prefix)/opt/bash-git-prompt/share"
@@ -59,8 +63,8 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 # ref: https://stackoverflow.com/questions/25884007/disable-git-add-command
 git() {
     if [ "$1" = "add" -o "$1" = "stage" ]; then
-        if [ "$2" = "." ]; then
-            printf "'git %s .' is currently disabled by your Git wrapper.\n" "$1";
+        if [ "$2" = "-A" ]; then
+            printf "'git %s -A' is currently disabled by your Git wrapper.\n" "$1";
         else
             command git "$@";
         fi
