@@ -15,3 +15,6 @@ export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+
+# asdf is an executable; managed tools are exposed through its shims.
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
