@@ -38,7 +38,28 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
  __GIT_PROMPT_DIR="$(brew --prefix)/opt/bash-git-prompt/share"
 fi
 
+# Some Homebrew completions use nosort, which requires Bash 4.4+.
+# Keep completion working on macOS Bash 3.2 by dropping only that option.
+if (( BASH_VERSINFO[0] < 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 4) )); then
+  complete() {
+    local -a args=()
+    while (( $# )); do
+      if [[ "$1" == -o && "${2-}" == nosort ]]; then
+        shift 2
+      else
+        args+=("$1")
+        shift
+      fi
+    done
+    builtin complete "${args[@]}"
+  }
+fi
+
 [ -r /opt/homebrew/etc/profile.d/bash_completion.sh ] && . /opt/homebrew/etc/profile.d/bash_completion.sh
+
+if (( BASH_VERSINFO[0] < 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 4) )); then
+  unset -f complete
+fi
 
 if test -f "/etc/os-release"; then
   # this is running on linux
